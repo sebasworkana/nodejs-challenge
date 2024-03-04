@@ -9,7 +9,7 @@
     "dev": "nodemon src/server.ts",
     "test": "NODE_ENV='test' jest",
     "lint:fix": "npx eslint . --fix",
-    "prepare": "husky install && bash -c 'chmod ug+x .husky/*'"
+    "prepare": "husky install && bash -c 'chmod ug+x .husky/_/*'"
   },
   "husky": {
     "hooks": {
