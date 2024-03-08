@@ -5,9 +5,8 @@ RUN apt-get update -qq && \
     apt-get install -y python-is-python3 pkg-config build-essential openssl
 
 COPY package*.json ./
-RUN npm install
 
-RUN npm ci
+RUN HUSKY=0 npm ci
 
 COPY . .
 
