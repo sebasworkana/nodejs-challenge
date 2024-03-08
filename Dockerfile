@@ -6,7 +6,7 @@ RUN apt-get update -qq && \
 
 COPY package*.json ./
 
-RUN HUSKY=0 npm ci
+RUN npm install --ignore-scripts
 
 COPY . .
 

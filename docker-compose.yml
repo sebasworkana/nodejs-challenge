@@ -21,10 +21,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - /path/to/local/dаta:/root/redis
-    environment:
-      - REDIS_PORT=${REDIS_PORT}
-      - REDIS_HOST=${REDIS_HOST}
+      - redis:/data
 
   node-server:
     build: .
@@ -38,7 +35,7 @@ services:
       DB_PASSWORD: admin
       DB_DATABASE: test
       REDIS_HOST: redis
-      REDIS_PORT: '6379'
+      REDIS_PORT: 6379
       DATABASE_URL: postgresql://${DB_USERNAME}:${DB_PASSWORD}@postgres:${DB_PORT}/${DB_DATABASE}
     depends_on:
       - postgres
